@@ -1,6 +1,6 @@
 # Axios에서 プロキシ 설정하기
 
-[![Promo](https://github.com/luminati-io/Rotating-Residential-Proxies/blob/main/50%25%20off%20promo.png)](https://brightdata.co.kr/proxy-types/residential-proxies) 
+[![Promo](https://github.com/bright-kr/Rotating-Residential-Proxies/blob/main/50%25%20off%20promo.png)](https://brightdata.co.kr/proxy-types/residential-proxies) 
 
 이 Axios プロキシ 가이드는 다음 주제를 다룹니다:
 
@@ -235,7 +235,7 @@ testProxy()
 
 ## Axios プロ키시: 고급 사용 사례
 
-[![Promo](https://github.com/luminati-io/LinkedIn-Scraper/blob/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.co.kr/proxy-types/residential-proxies) 
+[![Promo](https://github.com/bright-kr/LinkedIn-Scraper/blob/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.co.kr/proxy-types/residential-proxies) 
 
 ### グローバル로 プロ키시 설정하기
 

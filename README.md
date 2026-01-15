@@ -1,25 +1,25 @@
-# Axios에서 プロキシ 설정하기
+# Axios에서 프록시 설정하기
 
 [![Promo](https://github.com/bright-kr/Rotating-Residential-Proxies/blob/main/50%25%20off%20promo.png)](https://brightdata.co.kr/proxy-types/residential-proxies) 
 
-이 Axios プロキシ 가이드는 다음 주제를 다룹니다:
+이 Axios 프록시 가이드는 다음 주제를 다룹니다:
 
-1. [Axios와 プロキシ](#axios-and-proxies)
+1. [Axios와 프록시](#axios-and-proxies)
 2. [Axios에서 プロキ시 사용하기](#using-a-proxy-in-axios)
-   - [HTTP/HTTPS プロキシ](#httphttps-proxies)
+   - [HTTP/HTTPS 프록시](#httphttps-proxies)
    - [SOCKS プロ키시](#socks-proxies)
 3. [Axios プロ키시: 고급 사용 사례](#axios-proxy-advanced-use-cases)
    - [グローバル로 プロ키시 설정하기](#setting-a-proxy-globally)
    - [Axios에서 プロ키시 인증 처리하기](#dealing-with-proxy-authentication-in-axios)
    - [환경 변수로 プロ키시 설정하기](#setting-proxies-via-environment-variables)
-   - [ローテーティングプロキシ 구현하기](#implementing-rotating-proxies)
+   - [ローテーティング프록시 구현하기](#implementing-rotating-proxies)
 4. [결론](#conclusion)
 
 ## Axios와 プロ키시
 
-[Axios](https://axios-http.com/)는 JavaScript 에코시스템에서 가장 널리 사용되는 HTTP 클라이언트 중 하나입니다. Promise 기반의 사용하기 쉽고 직관적인 API를 제공하여 HTTP リクエスト를 수행하고 커스텀 ヘッダー, 구성, Cookie를 처리할 수 있습니다.
+[Axios](https://axios-http.com/)는 JavaScript 에코시스템에서 가장 널리 사용되는 HTTP 클라이언트 중 하나입니다. Promise 기반의 사용하기 쉽고 직관적인 API를 제공하여 HTTP 요청를 수행하고 커스텀 헤더, 구성, Cookie를 처리할 수 있습니다.
 
-Axios リクエスト를 プロ키시를 통해 라우팅하면 IPアドレス를 마스킹할 수 있어 대상 서버가 사용자를 식별하고 차단하기가 더 어려워집니다.
+Axios 요청를 プロ키시를 통해 라우팅하면 IP 주소를 마스킹할 수 있어 대상 서버가 사용자를 식별하고 차단하기가 더 어려워집니다.
 
 ## Axios에서 プロ키시 사용하기
 
@@ -81,7 +81,7 @@ Protocol: HTTP; IP Address: 52.117.157.155; Port: 8002
 
 완전한 プロ키시 URL은 `http://52.117.157.155:8002`가 됩니다.
 
-プロ키시가 예상대로 동작하는지 확인하려면 HTTPBin 프로젝트의 [/ip](https://httpbin.io/ip) エンドポイント를 대상으로 하십시오. 이 공개 API는 유입 リクエスト의 IP를 반환하므로, プロ키시 서버의 IP를 반환해야 합니다.
+プロ키시가 예상대로 동작하는지 확인하려면 HTTPBin 프로젝트의 [/ip](https://httpbin.io/ip) 엔드포인트를 대상으로 하십시오. 이 공개 API는 유입 요청의 IP를 반환하므로, プロ키시 서버의 IP를 반환해야 합니다.
 
 Node.js 스크립트의 스니펫은 다음과 같습니다:
 
@@ -193,7 +193,7 @@ axios.get(targetURL, { 
 })
 ```
 
-`httpAgent`와 `httpsAgent`는 각각 HTTP 및 HTTPS リクエスト를 수행할 때 사용할 커스텀 agent를 정의합니다. 즉, Axios가 수행하는 HTTP 또는 HTTPS リクエ스트는 지정한 SOCKS プロ키시를 통해 전달됩니다. 같은 방식으로 [`https-proxy-agent`](https://www.npmjs.com/package/https-proxy-agent) npm 패키지를 사용하면 Axios에서 HTTP/HTTPS プロ키시를 설정하는 대체 방법으로 사용할 수도 있습니다.
+`httpAgent`와 `httpsAgent`는 각각 HTTP 및 HTTPS 요청를 수행할 때 사용할 커스텀 agent를 정의합니다. 즉, Axios가 수행하는 HTTP 또는 HTTPS リクエ스트는 지정한 SOCKS プロ키시를 통해 전달됩니다. 같은 방식으로 [`https-proxy-agent`](https://www.npmjs.com/package/https-proxy-agent) npm 패키지를 사용하면 Axios에서 HTTP/HTTPS プロ키시를 설정하는 대체 방법으로 사용할 수도 있습니다.
 
 모두 합치면 다음과 같습니다:
 
@@ -295,7 +295,7 @@ const axiosInstance = axios.create({
 
 ### Axios에서 プロ키시 인증 처리하기
 
-프리미엄 プロ키시에 결제 사용자만 접근할 수 있도록, プロ키시 제공업체는 認証으로 이를 보호합니다. 사용자 이름과 비밀번호 없이 인증된 プロ키시에 연결하려고 하면 [407 Proxy Authentication Required](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/407) 오류가 발생합니다.
+프리미엄 プロ키시에 결제 사용자만 접근할 수 있도록, プロ키시 제공업체는 인증으로 이를 보호합니다. 사용자 이름과 비밀번호 없이 인증된 プロ키시에 연결하려고 하면 [407 Proxy Authentication Required](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/407) 오류가 발생합니다.
 
 특히, 인증된 プロ키시의 URL 문법은 다음과 같습니다:
 
@@ -380,27 +380,27 @@ export HTTP_PROXY = "[<PROTOCOL>://]<USERNAME>:<PASSWORD>@<HOST>[:<PORT>]"
 export HTTPS_PROXY = "[<PROTOCOL>://]<USERNAME>:<PASSWORD>@<HOST>[:<PORT>]"
 ```
 
-Axios가 이러한 환경 변수를 감지하면, 認証을 위한 자격 증명을 포함하여 해당 변수에서 プロ키시 설정을 읽어옵니다. Axios가 해당 환경 변수를 무시하도록 하려면 `proxy` 필드를 `false`로 설정하십시오. 또한 プロ키시를 적용하지 않아야 하는 도메인 목록을 콤마로 구분하여 `NO_PROXY` env로 정의할 수도 있다는 점을 유념하십시오.
+Axios가 이러한 환경 변수를 감지하면, 인증을 위한 자격 증명을 포함하여 해당 변수에서 プロ키시 설정을 읽어옵니다. Axios가 해당 환경 변수를 무시하도록 하려면 `proxy` 필드를 `false`로 설정하십시오. 또한 プロ키시를 적용하지 않아야 하는 도메인 목록을 콤마로 구분하여 `NO_PROXY` env로 정의할 수도 있다는 점을 유념하십시오.
 
 동일한 메커니즘은 [using proxies in cURL](https://brightdata.co.kr/blog/proxy-101/curl-with-proxies)에서도 동작합니다.
 
-### ローテーティングプロキシ 구현하기
+### ローテーティング프록시 구현하기
 
-대상 사이트가 プロ키시의 IPアドレス를 차단하는 것을 방지하려면, 수행하는 각 リクエスト가 서로 다른 プロ키시 서버에서 시작되도록 보장하십시오:
+대상 사이트가 プロ키시의 IP 주소를 차단하는 것을 방지하려면, 수행하는 각 요청가 서로 다른 プロ키시 서버에서 시작되도록 보장하십시오:
 
 1. 각기 다른 プロ키시에 연결하기 위한 정보를 담은 객체 리스트를 정의합니다.
-2. 각 リクエスト 전에 プロ키시 객체를 무작위로 선택합니다.
+2. 각 요청 전에 プロ키시 객체를 무작위로 선택합니다.
 3. 선택된 プロ키시를 Axios에 구성합니다.
 
-위에서 설명한 접근 방식은 Bright Data가 제공하는 [ローテーティングプロキシ](https://brightdata.co.kr/solutions/rotating-proxies)와 같은 신뢰할 수 있는 プロ키시 서버 풀에 접근할 수 있다고 가정합니다.
+위에서 설명한 접근 방식은 Bright Data가 제공하는 [ローテーティング프록시](https://brightdata.co.kr/solutions/rotating-proxies)와 같은 신뢰할 수 있는 プロ키시 서버 풀에 접근할 수 있다고 가정합니다.
 
 ## 결론
 
 Bright Data는 전 세계 최고의 プロ키시 서버를 운영하며, Fortune 500 기업과 20,000명 이상의 고객에게 서비스를 제공합니다. 전 세계 プロ키시 네트워크는 다음을 포함합니다:
 
-*   [Datacenter proxies](https://brightdata.co.kr/proxy-types/datacenter-proxies) – 770,000개 이상의 データセンタープロキシ IP.
-*   [Residential proxies](https://brightdata.co.kr/proxy-types/residential-proxies) – 195개 이상 국가에서 7,200만 개 이상의 レジデンシャルプロキシ IP.
-*   [ISP proxies](https://brightdata.co.kr/proxy-types/isp-proxies) – 700,000개 이상의 ISPプロキシ IP.
-*   [Mobile proxies](https://brightdata.co.kr/proxy-types/mobile-proxies) – 700만 개 이상의 モバイルプロキシ IP.
+*   [Datacenter proxies](https://brightdata.co.kr/proxy-types/datacenter-proxies) – 770,000개 이상의 データセンター프록시 IP.
+*   [Residential proxies](https://brightdata.co.kr/proxy-types/residential-proxies) – 195개 이상 국가에서 7,200만 개 이상의 レジデンシャル프록시 IP.
+*   [ISP proxies](https://brightdata.co.kr/proxy-types/isp-proxies) – 700,000개 이상의 ISP프록시 IP.
+*   [Mobile proxies](https://brightdata.co.kr/proxy-types/mobile-proxies) – 700만 개 이상의 モバイル프록시 IP.
 
 지금 [Create a free Bright Data account](https://brightdata.co.kr/#popup-155639) 하여 プロ키시 서버를 사용해 보십시오.
